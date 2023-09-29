@@ -43,7 +43,6 @@ except URLError as e:
   streamlit.error()
 
 
-streamlit.stop()
 streamlit.header("the fruit load list contains:")
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
@@ -60,3 +59,5 @@ add_my_fruit = streamlit.text_input('What fruit would you like to add','')
 streamlit.write('thanks for adding ', add_my_fruit)
 
 my_cur.execute("insert into fruit_load_list values('from streamlit')")
+streamlit.stop()
+
